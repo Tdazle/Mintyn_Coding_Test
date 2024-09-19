@@ -5,7 +5,6 @@ import com.example.mintyn.dto.SignUpRequest;
 import com.example.mintyn.model.ApiResponse;
 import com.example.mintyn.model.Token;
 import com.example.mintyn.service.UserService;
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,7 +22,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ApiResponse<Token> login(@RequestBody LoginRequest loginRequest, HttpServletResponse response) {
+    public ApiResponse<Token> login(@RequestBody LoginRequest loginRequest) {
         String username = loginRequest.getUsername();
         userService.loadUserByUsername(username);
         Token token = userService.getToken(username);
