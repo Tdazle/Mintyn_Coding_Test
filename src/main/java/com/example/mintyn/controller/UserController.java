@@ -6,6 +6,7 @@ import com.example.mintyn.model.ApiResponse;
 import com.example.mintyn.model.Token;
 import com.example.mintyn.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
